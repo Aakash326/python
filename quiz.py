@@ -19,19 +19,18 @@ def run_quiz():
 
     score = 0
 
-    for idx, q in enumerate(questions, 1):
-        print(f"\nQ{idx}: {q['question']}")
-        for option in q["options"]:
+    for idx, i in enumerate(questions, 1):
+        print(f"\nQ{idx}: {i['question']}")
+        for option in i["options"]:
             print(option)
         
         user_answer = input("Your answer (A/B/C/D): ").upper()
-        if user_answer == q["answer"]:
+        if user_answer == i["answer"]:
             print("✅ Correct!")
             score += 1
         else:
-            print(f"❌ Wrong! The correct answer is {q['answer']}")
+            print(f"❌ Wrong! The correct answer is {i['answer']}")
 
     print(f"\n🎉 Quiz completed! Your score: {score}/{len(questions)}")
 
-# Run the quiz
 run_quiz()
